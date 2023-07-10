@@ -1,4 +1,4 @@
-package com.egoncastle.drivers
+package com.freenet.drivers
 
 import io.flutter.embedding.android.FlutterActivity
 

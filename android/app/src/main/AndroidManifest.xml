@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.egoncastle.drivers">
+    package="com.freenet.drivers">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
@@ -41,6 +41,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyDoiHMtuMr3S54z3nTeUZkIa-nCVDuDVAA"/>
+           android:value="AIzaSyDlaPd6vht-ezanctI2dlZGi49Vyt3Bc_4"/>
     </application>
 </manifest>

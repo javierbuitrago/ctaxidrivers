@@ -72,12 +72,12 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Column(
               children: [
-                Image.asset(darkTheme ? 'images/city_dark.jpg' : 'images/city.jpg'),
+                Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
                 SizedBox(height: 20,),
 
                 Text(
-                  'Login',
+                  'Iniciar Sesión',
                   style: TextStyle(
                     color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                     fontSize: 25,
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.email_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                  hintText: "Password",
+                                  hintText: "Contraseña",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                   ),
@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         style: BorderStyle.none,
                                       )
                                   ),
-                                  prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       _passwordVisible ? Icons.visibility : Icons.visibility_off,
@@ -202,10 +202,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   minimumSize: Size(double.infinity, 50),
                                 ),
                                 onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
                                   _submit();
                                 },
                                 child: Text(
-                                  'Login',
+                                  'Ingresar',
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
@@ -219,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
                               },
                               child: Text(
-                                'Forgot Password?',
+                                'Recuperar clave?',
                                 style: TextStyle(
                                   color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                                 ),
@@ -232,7 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Doesn't have an account?",
+                                  "Aun no tienes cuenta?",
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 15,
@@ -246,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Navigator.push(context, MaterialPageRoute(builder: (c) => RegisterScreen()));
                                   },
                                   child: Text(
-                                    "Register",
+                                    "Registrar",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: darkTheme ? Colors.amber.shade400 : Colors.blue,

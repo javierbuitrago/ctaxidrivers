@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.egoncastle" "\0"
+            VALUE "CompanyName", "com.freenet" "\0"
             VALUE "FileDescription", "drivers" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "drivers" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.egoncastle. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.freenet. All rights reserved." "\0"
             VALUE "OriginalFilename", "drivers.exe" "\0"
             VALUE "ProductName", "drivers" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

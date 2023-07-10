@@ -56,7 +56,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
           children: [
             Column(
               children: [
-                Image.asset(darkTheme ? 'images/city_dark.jpg' : 'images/city.jpg'),
+                Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
                 SizedBox(height: 20,),
 

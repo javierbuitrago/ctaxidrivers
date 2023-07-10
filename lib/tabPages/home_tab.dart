@@ -26,7 +26,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
   final Completer<GoogleMapController> _controllerGoogleMap = Completer();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+    target: LatLng(8.2344, -73.3548),
     zoom: 14.4746,
   );
 

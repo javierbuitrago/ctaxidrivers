@@ -1,4 +1,6 @@
 import 'package:drivers/screens/car_info_screen.dart';
+import 'package:drivers/screens/forgot_password_screen.dart';
+import 'package:drivers/screens/login_screen.dart';
 import 'package:drivers/screens/main_screen.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -79,12 +81,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             Column(
               children: [
-                Image.asset(darkTheme ? 'images/city_dark.jpg' : 'images/city.jpg'),
+                Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
                 SizedBox(height: 20,),
 
                 Text(
-                  'Register',
+                  'Registro',
                   style: TextStyle(
                     color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                     fontSize: 25,
@@ -108,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Name",
+                                hintText: "Nombre",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -160,7 +162,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.email_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -191,7 +193,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 color: darkTheme ? Colors.amber.shade400 : Colors.grey,
                               ),
                               decoration: InputDecoration(
-                                hintText: "Phone",
+                                hintText: "Celular",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -216,7 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(100)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Address",
+                                hintText: "Dirreción",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -229,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.location_city_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -269,7 +271,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                                 suffixIcon: IconButton(
                                   icon: Icon(
                                     _passwordVisible ? Icons.visibility : Icons.visibility_off,
@@ -322,7 +324,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         style: BorderStyle.none,
                                       )
                                   ),
-                                  prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       _passwordVisible ? Icons.visibility : Icons.visibility_off,
@@ -370,10 +372,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 minimumSize: Size(double.infinity, 50),
                               ),
                               onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (c) => RegisterScreen()));
                                 _submit();
                               },
                               child: Text(
-                                'Register',
+                                'Enviar',
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),
@@ -383,9 +386,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             SizedBox(height: 20,),
 
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
+                              },
                               child: Text(
-                                'Forgot Password?',
+                                'Recuperar Clave',
                                 style: TextStyle(
                                   color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                                 ),
@@ -398,7 +403,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Have an account?",
+                                  "Ya tienes cuenta?",
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 15,
@@ -409,9 +414,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                                 GestureDetector(
                                   onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
                                   },
                                   child: Text(
-                                    "Sign In",
+                                    "Ingresar",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: darkTheme ? Colors.amber.shade400 : Colors.blue,
