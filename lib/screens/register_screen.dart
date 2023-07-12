@@ -1,6 +1,4 @@
 import 'package:drivers/screens/car_info_screen.dart';
-import 'package:drivers/screens/forgot_password_screen.dart';
-import 'package:drivers/screens/login_screen.dart';
 import 'package:drivers/screens/main_screen.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -10,6 +8,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../global/global.dart';
+import 'forgot_password_screen.dart';
+import 'login_screen.dart';
 
 
 class RegisterScreen extends StatefulWidget {
@@ -86,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(height: 20,),
 
                 Text(
-                  'Registro',
+                  'Register',
                   style: TextStyle(
                     color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                     fontSize: 25,
@@ -110,18 +110,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Nombre",
+                                hintText: "Name",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
                                 filled: true,
                                 fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(40),
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    style: BorderStyle.none,
-                                  )
+                                    borderRadius: BorderRadius.circular(40),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    )
                                 ),
                                 prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
@@ -193,7 +193,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 color: darkTheme ? Colors.amber.shade400 : Colors.grey,
                               ),
                               decoration: InputDecoration(
-                                hintText: "Celular",
+                                hintText: "Phone",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -207,7 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     )
                                 ),
                               ),
-                              initialCountryCode: 'BD',
+                              initialCountryCode: 'CO',
                               onChanged: (text) => setState(() {
                                 phoneTextEditingController.text = text.completeNumber;
                               }),
@@ -218,7 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(100)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Dirreción",
+                                hintText: "Address",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -258,32 +258,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Password",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                                filled: true,
-                                fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                    borderSide: BorderSide(
-                                      width: 0,
-                                      style: BorderStyle.none,
-                                    )
-                                ),
-                                prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
-                                suffixIcon: IconButton(
-                                  icon: Icon(
-                                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                                    color: darkTheme ? Colors.amber.shade400 : Colors.grey,
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
                                   ),
-                                  onPressed: () {
-                                    // update the state i.e toggle the state of passwordVisible variable
-                                    setState(() {
-                                      _passwordVisible = !_passwordVisible;
-                                    });
-                                  },
-                                )
+                                  filled: true,
+                                  fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(40),
+                                      borderSide: BorderSide(
+                                        width: 0,
+                                        style: BorderStyle.none,
+                                      )
+                                  ),
+                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  suffixIcon: IconButton(
+                                    icon: Icon(
+                                      _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                                      color: darkTheme ? Colors.amber.shade400 : Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      // update the state i.e toggle the state of passwordVisible variable
+                                      setState(() {
+                                        _passwordVisible = !_passwordVisible;
+                                      });
+                                    },
+                                  )
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -362,25 +362,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             SizedBox(height: 20,),
 
                             ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: darkTheme ? Colors.amber.shade400 : Colors.blue,
-                                onPrimary: darkTheme ? Colors.black : Colors.white,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
+                                style: ElevatedButton.styleFrom(
+                                  primary: darkTheme ? Colors.amber.shade400 : Colors.blue,
+                                  onPrimary: darkTheme ? Colors.black : Colors.white,
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(32),
+                                  ),
+                                  minimumSize: Size(double.infinity, 50),
                                 ),
-                                minimumSize: Size(double.infinity, 50),
-                              ),
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (c) => RegisterScreen()));
-                                _submit();
-                              },
-                              child: Text(
-                                'Enviar',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              )
+                                onPressed: () {
+                                  _submit();
+                                },
+                                child: Text(
+                                  'Register',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                )
                             ),
 
                             SizedBox(height: 20,),
@@ -390,7 +389,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
                               },
                               child: Text(
-                                'Recuperar Clave',
+                                'Forgot Password?',
                                 style: TextStyle(
                                   color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                                 ),
@@ -403,7 +402,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Ya tienes cuenta?",
+                                  "Have an account?",
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 15,
@@ -417,7 +416,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
                                   },
                                   child: Text(
-                                    "Ingresar",
+                                    "Sign In",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: darkTheme ? Colors.amber.shade400 : Colors.blue,

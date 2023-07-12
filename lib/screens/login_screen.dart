@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20,),
 
                 Text(
-                  'Iniciar Sesión',
+                  'Login',
                   style: TextStyle(
                     color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                     fontSize: 25,
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.email_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                  hintText: "Contraseña",
+                                  hintText: "Password",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                   ),
@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         style: BorderStyle.none,
                                       )
                                   ),
-                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       _passwordVisible ? Icons.visibility : Icons.visibility_off,
@@ -202,11 +202,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                   minimumSize: Size(double.infinity, 50),
                                 ),
                                 onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
                                   _submit();
                                 },
                                 child: Text(
-                                  'Ingresar',
+                                  'Login',
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
@@ -220,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
                               },
                               child: Text(
-                                'Recuperar clave?',
+                                'Forgot Password?',
                                 style: TextStyle(
                                   color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                                 ),
@@ -233,7 +232,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Aun no tienes cuenta?",
+                                  "Doesn't have an account?",
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 15,
@@ -247,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Navigator.push(context, MaterialPageRoute(builder: (c) => RegisterScreen()));
                                   },
                                   child: Text(
-                                    "Registrar",
+                                    "Register",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: darkTheme ? Colors.amber.shade400 : Colors.blue,

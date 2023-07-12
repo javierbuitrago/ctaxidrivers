@@ -1,4 +1,3 @@
-import 'package:drivers/screens/register_screen.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,7 +25,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     firebaseAuth.sendPasswordResetEmail(
         email: emailTextEditingController.text.trim()
     ).then((value){
-      Fluttertoast.showToast(msg: "Chequea Tu Email, te enviamos un correo con el link");
+      Fluttertoast.showToast(msg: "We have sent you an email to recover password, please check email");
     }).onError((error, stackTrace){
       Fluttertoast.showToast(msg: "Error Occured: \n ${error.toString()}");
     });
@@ -34,37 +33,31 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
 
     bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
-    
+
     return GestureDetector(
-      
       onTap: () {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
         body: ListView(
-          
           padding: EdgeInsets.all(0),
           children: [
             Column(
-              
               children: [
-                SizedBox(height: 50,),
                 Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
-                SizedBox(height: 40,),
+                SizedBox(height: 20,),
 
                 Text(
-                  'Recupera tu contraseña',
+                  'Forgot Password Screen',
                   style: TextStyle(
                     color: darkTheme ? Colors.amber.shade400 : Colors.blue,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 10,),
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 20, 15, 50),
@@ -95,7 +88,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -117,7 +110,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               }),
                             ),
 
-                            SizedBox(height: 40,),
+                            SizedBox(height: 20,),
 
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
@@ -133,21 +126,32 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   _submit();
                                 },
                                 child: Text(
-                                  'Enviar link de reset',
+                                  'Send Reset Password link',
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
                                 )
                             ),
 
-                            
+                            SizedBox(height: 20,),
+
+                            GestureDetector(
+                              onTap: () {},
+                              child: Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                  color: darkTheme ? Colors.amber.shade400 : Colors.blue,
+                                ),
+                              ),
+                            ),
+
                             SizedBox(height: 20,),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Ya tienes cuenta",
+                                  "Already have an account?",
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 15,
@@ -161,7 +165,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                     Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
                                   },
                                   child: Text(
-                                    "Ingresar",
+                                    "Login",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: darkTheme ? Colors.amber.shade400 : Colors.blue,
