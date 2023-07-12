@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "383652833540",
+    "firebase_url": "https://ctaxi-380f4-default-rtdb.firebaseio.com",
     "project_id": "ctaxi-380f4",
     "storage_bucket": "ctaxi-380f4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383652833540:android:c3b48bd06288384295c851",
+        "mobilesdk_app_id": "1:383652833540:android:512c054ffc28db9795c851",
         "android_client_info": {
-          "package_name": "com.awtech.uber_ocana"
+          "package_name": "com.alker.drivers"
         }
       },
       "oauth_client": [],
@@ -26,28 +27,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383652833540:android:be1b4bab5a5a8a3595c851",
+        "mobilesdk_app_id": "1:383652833540:android:e3ff9ed5a6df8fc995c851",
         "android_client_info": {
-          "package_name": "com.freenet.drivers"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDlaPd6vht-ezanctI2dlZGi49Vyt3Bc_4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:383652833540:android:fad4a02a1749907595c851",
-        "android_client_info": {
-          "package_name": "com.freenet.users"
+          "package_name": "com.alker.users"
         }
       },
       "oauth_client": [],

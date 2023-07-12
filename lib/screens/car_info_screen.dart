@@ -30,6 +30,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
         "car_model": carModelTextEditingController.text.trim(),
         "car_number": carNumberTextEditingController.text.trim(),
         "car_color": carColorTextEditingController.text.trim(),
+        "type": selectedCarType,
       };
 
       DatabaseReference userRef = FirebaseDatabase.instance.ref().child("drivers");
@@ -56,7 +57,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
           children: [
             Column(
               children: [
-                Image.asset(darkTheme ? 'images/city_dark.jpg' : 'images/city.jpg'),
+                Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
                 SizedBox(height: 20,),
 

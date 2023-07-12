@@ -8,6 +8,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../global/global.dart';
+import 'forgot_password_screen.dart';
+import 'login_screen.dart';
 
 
 class RegisterScreen extends StatefulWidget {
@@ -79,7 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             Column(
               children: [
-                Image.asset(darkTheme ? 'images/city_dark.jpg' : 'images/city.jpg'),
+                Image.asset(darkTheme ? 'images/city.png' : 'images/city.png'),
 
                 SizedBox(height: 20,),
 
@@ -115,11 +117,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 filled: true,
                                 fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(40),
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    style: BorderStyle.none,
-                                  )
+                                    borderRadius: BorderRadius.circular(40),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    )
                                 ),
                                 prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
@@ -160,7 +162,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.email_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -205,7 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     )
                                 ),
                               ),
-                              initialCountryCode: 'BD',
+                              initialCountryCode: 'CO',
                               onChanged: (text) => setState(() {
                                 phoneTextEditingController.text = text.completeNumber;
                               }),
@@ -229,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: BorderStyle.none,
                                     )
                                 ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                prefixIcon: Icon(Icons.location_city_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -256,32 +258,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 LengthLimitingTextInputFormatter(50)
                               ],
                               decoration: InputDecoration(
-                                hintText: "Password",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                                filled: true,
-                                fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                    borderSide: BorderSide(
-                                      width: 0,
-                                      style: BorderStyle.none,
-                                    )
-                                ),
-                                prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
-                                suffixIcon: IconButton(
-                                  icon: Icon(
-                                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                                    color: darkTheme ? Colors.amber.shade400 : Colors.grey,
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
                                   ),
-                                  onPressed: () {
-                                    // update the state i.e toggle the state of passwordVisible variable
-                                    setState(() {
-                                      _passwordVisible = !_passwordVisible;
-                                    });
-                                  },
-                                )
+                                  filled: true,
+                                  fillColor: darkTheme ? Colors.black45 : Colors.grey.shade200,
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(40),
+                                      borderSide: BorderSide(
+                                        width: 0,
+                                        style: BorderStyle.none,
+                                      )
+                                  ),
+                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  suffixIcon: IconButton(
+                                    icon: Icon(
+                                      _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                                      color: darkTheme ? Colors.amber.shade400 : Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      // update the state i.e toggle the state of passwordVisible variable
+                                      setState(() {
+                                        _passwordVisible = !_passwordVisible;
+                                      });
+                                    },
+                                  )
                               ),
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (text) {
@@ -322,7 +324,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         style: BorderStyle.none,
                                       )
                                   ),
-                                  prefixIcon: Icon(Icons.person, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
+                                  prefixIcon: Icon(Icons.key_outlined, color: darkTheme ? Colors.amber.shade400 : Colors.grey,),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       _passwordVisible ? Icons.visibility : Icons.visibility_off,
@@ -360,30 +362,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             SizedBox(height: 20,),
 
                             ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: darkTheme ? Colors.amber.shade400 : Colors.blue,
-                                onPrimary: darkTheme ? Colors.black : Colors.white,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
+                                style: ElevatedButton.styleFrom(
+                                  primary: darkTheme ? Colors.amber.shade400 : Colors.blue,
+                                  onPrimary: darkTheme ? Colors.black : Colors.white,
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(32),
+                                  ),
+                                  minimumSize: Size(double.infinity, 50),
                                 ),
-                                minimumSize: Size(double.infinity, 50),
-                              ),
-                              onPressed: () {
-                                _submit();
-                              },
-                              child: Text(
-                                'Register',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              )
+                                onPressed: () {
+                                  _submit();
+                                },
+                                child: Text(
+                                  'Register',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                )
                             ),
 
                             SizedBox(height: 20,),
 
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (c) => ForgotPasswordScreen()));
+                              },
                               child: Text(
                                 'Forgot Password?',
                                 style: TextStyle(
@@ -409,6 +413,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                                 GestureDetector(
                                   onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
                                   },
                                   child: Text(
                                     "Sign In",
